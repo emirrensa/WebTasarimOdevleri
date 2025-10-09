@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>XMLHttpRequest ile XML Okuma</h2>
+<p id="demo"></p>
+
+<script>
+const xhttp = new XMLHttpRequest();
+xhttp.onload = function() {
+  const xmlDoc = this.responseXML; // XML dökümanını alıyoruz
+  const artists = xmlDoc.getElementsByTagName("ARTIST");
+  const titles = xmlDoc.getElementsByTagName("TITLE");
+  
+  let txt = "<strong>Albüm Listesi:</strong><br><br>";
+  
+  for (let i = 0; i < artists.length; i++) {
+    let artist = artists[i].childNodes[0].nodeValue;
+    let title = titles[i].childNodes[0].nodeValue;
+    txt += "🎵 " + artist + " - " + title + "<br>";
+  }
+  
+  document.getElementById("demo").innerHTML = txt;
+}
+xhttp.open("GET", "cd_catalog.xml");
+xhttp.send();
+</script>
+
+</body>
+</html>
