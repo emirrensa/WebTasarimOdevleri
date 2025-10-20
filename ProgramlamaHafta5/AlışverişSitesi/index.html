@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Trendyol</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">mini trendyol</div>
+    <form class="search" id="searchForm">
+      <input id="q" type="search" placeholder="Ara...">
+      <button type="submit">Ara</button>
+    </form>
+  </header>
+
+  <div class="ads">
+    <div class="ticker">
+      <div class="track">
+        <span>Bugün %30 indirim •</span>
+        <span>Kargo Bedava •</span>
+        <span>2 Al 1 Öde •</span>
+        <span>Seçili Hoodielerde %40 •</span>
+        <span>Pantolonlarda Ekstra %10 •</span>
+        <span>Bugün %30 indirim •</span>
+        <span>Kargo Bedava •</span>
+        <span>2 Al 1 Öde •</span>
+        <span>Seçili Hoodielerde %40 •</span>
+        <span>Pantolonlarda Ekstra %10 •</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <aside class="filters">
+      <h3>Kategoriler</h3>
+      <div class="checklist" id="catList"></div>
+
+      <div class="section">
+        <h3>Fiyat Aralığı (₺)</h3>
+        <div class="row">
+          <input type="number" id="minPrice" placeholder="min">
+          <input type="number" id="maxPrice" placeholder="max">
+        </div>
+        <div class="btns">
+          <button class="btn" id="clearPrice">Temizle</button>
+          <button class="btn primary" id="applyPrice">Uygula</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Beden</h3>
+        <div class="checklist" id="sizeList"></div>
+      </div>
+
+      <div class="section">
+        <h3>Sıralama</h3>
+        <select id="sortSel">
+          <option value="reco">Önerilen</option>
+          <option value="priceAsc">Fiyat Artan</option>
+          <option value="priceDesc">Fiyat Azalan</option>
+          <option value="nameAsc">İsim A-Z</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <button class="btn" id="clearAll">Tüm Filtreleri Sıfırla</button>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden>Uygun ürün bulunamadı</div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
